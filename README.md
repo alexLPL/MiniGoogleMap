@@ -1,1 +1,1 @@
-this is a test 
+This is the repository for MiniGoogleMap project
