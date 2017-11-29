@@ -13,17 +13,17 @@ $(function(){
           map: map
         });
 	 $.ajax({
-             url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json',
+             url: '/places-info',
              data: {
                  'location': position.lat + ',' + position.lng,
                  'type': 'restaurant',
                  'key': GOOGLE_API_KEY,
                  'radius': 500
              },
-             success: function() {
+             success: function(data) {
                  debugger;
              },
-             fail: function() {
+             fail: function(data) {
                  debugger;
              }
          });
