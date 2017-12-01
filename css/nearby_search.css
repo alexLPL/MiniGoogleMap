@@ -4,13 +4,23 @@ html{
    margin: 0;
 }
 
-body{
+html body{
    margin: 0;
    height: 100%;
    width: 100%;
 }
 
-body #map{
+html body #map{
    height: 100%;
    width: 100%;
-}	 
+}
+
+html body #detailed-info-wrapper {
+   width: 200px;
+   height: 200px;
+   background-color: blue;
+   display: none;
+   position: absolute;
+   top: 0;
+   left: 0;
+  }		  	 
