@@ -1,4 +1,5 @@
-$function(){
+
+$(function(){
  var DEFAULT_ZOOM = 15;
  var GOOGLE_API_KEY = 'AIzaSyCl2EfOePJUj5HmEjhGMvfLgoF1EFDghM0'; 
 
@@ -68,11 +69,18 @@ $function(){
         });
     };
 
-    function showDetailedInfo(place) {
-        $('#detailed-info-wrapper').show();
+     function showDetailedInfo(place) {
+        var params = {
+            placeId: place['place_id']
+        };
+        service.getDetails(params, function(place) {
+            $('#hero-header-wrapper img').attr('src', place.photos[0].getUrl({'maxWidth': 408, 'maxheight': 407}));
+            $('.place-name').text(place['name']);
+            $('.place-review-score').text(place['rating']);
+            $('.place-type').text(place['types'][0]);
+            $('#place-info-wrapper').show();
+        });
     };
-
      
    initMap();
 });
-
