@@ -1,4 +1,4 @@
-$(function(){
+$function(){
  var DEFAULT_ZOOM = 15;
  var GOOGLE_API_KEY = 'AIzaSyCl2EfOePJUj5HmEjhGMvfLgoF1EFDghM0'; 
 
@@ -75,3 +75,4 @@ $(function(){
      
    initMap();
 });
+
