@@ -67,6 +67,7 @@ $(function(){
                 });
             }
         });
+           
     };
 
      function showDetailedInfo(place) {
