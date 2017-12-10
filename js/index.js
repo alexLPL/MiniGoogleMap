@@ -67,6 +67,10 @@ $(function(){
                 });
             }
         });
+        
+         $('.place-info-visibility-toggle').on('click', function() {
+             $('#place-info-wrapper').toggleClass('visible');
+         }); 
            
     };
 
@@ -79,7 +83,7 @@ $(function(){
             $('.place-name').text(place['name']);
             $('.place-review-score').text(place['rating']);
             $('.place-type').text(place['types'][0]);
-            $('#place-info-wrapper').show();
+            $('#place-info-wrapper').addClass('visible');
         });
     };
      
