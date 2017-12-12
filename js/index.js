@@ -70,6 +70,7 @@ $(function(){
         
          $('.place-info-visibility-toggle').on('click', function() {
              $('#place-info-wrapper').toggleClass('visible');
+             $('#place-info-wrapper .triangle-icon').toggleClass('left');
          }); 
            
     };
