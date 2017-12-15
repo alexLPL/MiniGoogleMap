@@ -83,15 +83,18 @@ html{
                 outline: none;
                 
                  .triangle-icon {
+                     @triangle-size: 7px;
                      width: 0; 
                      height: 0;
-                     border-top: 7px solid transparent;
-                     border-bottom: 7px solid transparent; 
-                     border-left: 7px solid rgba(0, 0, 0, 0.7);
- 
+                     border-top: @triangle-size  solid transparent;
+                     border-bottom: @triangle-size solid transparent; 
+                     border-left: @triangle-size  solid rgba(0, 0, 0, 0.7);
+                     position: relative;
+                     left: 2px;                     
+
                      &.left {
                          border-left: 0;
-                         border-right:7px solid rgba(0, 0, 0, 0.7); 
+                         border-right:@triangle-size solid rgba(0, 0, 0, 0.7); 
                      }
                  }
             }

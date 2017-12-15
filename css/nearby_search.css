@@ -79,6 +79,8 @@ html body #place-info-wrapper .place-info-visibility-toggle .triangle-icon {
    border-top: 7px solid transparent;
    border-bottom: 7px solid transparent;
    border-left: 7px solid rgba(0, 0, 0, 0.7);
+   position: relative;
+   left: 2px;
  }
  html body #place-info-wrapper .place-info-visibility-toggle .triangle-icon.left {
    border-left: 0;
