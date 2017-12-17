@@ -16,6 +16,10 @@ html body #place-info-wrapper {
   position: absolute;
   top: 0;
   left: -408px;
+  display: none;
+}
+html body #place-info-wrapper.is-active{
+  display: block;
 }
 
 html body #place-info-wrapper.visible {
