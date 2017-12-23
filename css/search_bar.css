@@ -1,8 +1,11 @@
 .search-bar-wrapper {
   height: 48px;
+  width: 312px;
   position: absolute;
-  top: 50px;
-  left: 10px;
+  top: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
   border-radius: 2px 2px 0 0;

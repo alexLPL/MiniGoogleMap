@@ -35,6 +35,40 @@ $(function(){
              'radius': 500,
              'type': 'restaurant'
         };
+
+        getNearByPlaces(map,params);
+
+        $('.place-info-visibility-toggle').on('click', function() {
+            $('#place-info-wrapper').toggleClass('visible');
+            $('#place-info-wrapper .triangle-icon').toggleClass('left');
+        });
+
+        var search_bar = new SearchBar(function(type) {
+            var params = {
+                 'location': new google.maps.LatLng(position.lat, position.lng),
+                 'radius': 500,
+                 'type': type
+            };
+            getNearByPlaces(map, params);
+        });
+        search_bar.addTo($('body'));
+    };
+
+    function showDetailedInfo(place) {
+        var params = {
+            placeId: place['place_id']
+        };
+        service.getDetails(params, function(place) {
+            $('#hero-header-wrapper img').attr('src', place.photos[0].getUrl({'maxWidth': 408, 'maxheight': 407}));
+            $('.place-name').text(place['name']);
+            $('.place-review-score').text(place['rating']);
+            $('.place-type').text(place['types'][0]);
+            $('#place-info-wrapper').addClass('visible');
+            $('#place-info-wrapper').addClass('is-active');
+        });
+    };
+
+    function getNearByPlaces(map,params){
         service = new google.maps.places.PlacesService(map);
         service.nearbySearch(params, function(results, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -68,30 +102,7 @@ $(function(){
                 });
             }
         });
-        
-         $('.place-info-visibility-toggle').on('click', function() {
-             $('#place-info-wrapper').toggleClass('visible');
-             $('#place-info-wrapper .triangle-icon').toggleClass('left');
-         }); 
-                
-         var search_bar = new SearchBar();
-         search_bar.addTo($('body'));  
- 
-    };
-
-     function showDetailedInfo(place) {
-        var params = {
-            placeId: place['place_id']
-        };
-        service.getDetails(params, function(place) {
-            $('#hero-header-wrapper img').attr('src', place.photos[0].getUrl({'maxWidth': 408, 'maxheight': 407}));
-            $('.place-name').text(place['name']);
-            $('.place-review-score').text(place['rating']);
-            $('.place-type').text(place['types'][0]);
-            $('#place-info-wrapper').addClass('visible');
-            $('#place-info-wrapper').addClass('is-active');
-        });
-    };
+     }
      
     function dismissDetailedInfo(){
            $('#place-info-wrapper').removeClass('is-active'); 
