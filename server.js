@@ -8,6 +8,8 @@ var places_url= 'https://maps.googleapis.com/maps/api/place/nearbysearch/json';
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/templates/index.html')))
 
+app.get('/nearbysearch', (req, res) => res.sendFile(path.join(__dirname+'/templates/index.html')))
+
 app.get('/places-info',function(req,api_res){
 	var radius= req.query.radius?req.query.radius:150;
 	var params = {

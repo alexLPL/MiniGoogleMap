@@ -73,7 +73,10 @@ $(function(){
              $('#place-info-wrapper').toggleClass('visible');
              $('#place-info-wrapper .triangle-icon').toggleClass('left');
          }); 
-           
+                
+         var search_bar = new SearchBar();
+         search_bar.addTo($('body'));  
+ 
     };
 
      function showDetailedInfo(place) {
