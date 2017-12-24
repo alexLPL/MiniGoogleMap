@@ -52,25 +52,54 @@ html{
                     .info-text {
                         color: white;
                         font-family: Roboto, Arial, sans-serif;
+		    }
 
-                        &.place-name {
-                            font-size: 18px;
+                    .place-basic-info-row {
+                        margin-top: 8px;
+                    }
+
+                    .place-name {
+                        font-size: 18px;
+                        margin-top: 0;
+                    }
+
+                    .place-review-score, .place-type {
+                        font-size: 13px;
+                        color: white;
+                    }
+
+                    .place-review-wrapper {
+                        align-items: center;
+                        display: flex;
+
+                        .place-review-score {
+                            display: inline;
+                            height: 13px;
                         }
 
-                        &.place-review-score, &.place-type {
-                            margin-top: 8px;
-                            font-size: 13px;
-                            color: white;
-                        }
+                        .place-review-stars-wrapper {
+                            display: inline-flex;
+                            justify-content: center;
+                            padding-left: 6px;
 
-                        &.place-review-score {
-                            height: 16px;
-                        }
+                            .star-icon {
+                                background-image: url('/assets/star-16.png');
+                                height: 16px;
+                                width: 16px;
+                            }
 
-                        &.place-type {
-                            text-transform: capitalize;
+                            .half-star-icon {
+                                background-image: url('/assets/half-star-16.png');
+                                height: 16px;
+                                width: 16px;
+                            }
                         }
                     }
+
+                    .place-type {
+                        text-transform: capitalize;
+                    }	
+
                 }
             }
             .place-info-visibility-toggle {

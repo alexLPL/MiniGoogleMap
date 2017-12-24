@@ -30,5 +30,6 @@ app.get('/places-info',function(req,api_res){
 
 app.use('/js', express.static(path.join(__dirname, 'js')))
 app.use('/css', express.static(path.join(__dirname, 'css')))
+app.use('/assets', express.static(path.join(__dirname, 'assets')))
 
 app.listen(8080, () => console.log('Example app listening on port 8080!'))

@@ -66,7 +66,16 @@ $(function(){
                  $('#hero-header-wrapper img').attr('src', place.photos[0].getUrl({'maxWidth': 408, 'maxheight': 407}));
             }
             $('.place-name').text(place['name']);
-            $('.place-review-score').text(place['rating']);
+            
+            var rating = parseFloat(place['rating']).toFixed(1);
+            $('.place-review-score').text(rating);
+            for (i = 0; i < Math.round(rating); i++) {
+                $('.place-review-stars-wrapper').append('<div class="star-icon"></div>');
+            }
+            if (rating % 1 && rating % 1 < 0.5) {
+                $('.place-review-star').append('<div class="half-star-icon"></div>');
+            }
+
             $('.place-type').text(place['types'][0]);
             $('#place-info-wrapper').addClass('visible');
             $('#place-info-wrapper').addClass('is-active');
@@ -110,6 +119,7 @@ $(function(){
 
                         showDetailedInfo(place);
                         map.setOptions({'mapTypeControl': false});
+                        $('.place-review-stars-wrapper').empty();
                     });
 
                    markers_shown.push(marker);   
