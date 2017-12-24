@@ -61,7 +61,10 @@ $(function(){
             placeId: place['place_id']
         };
         service.getDetails(params, function(place) {
-            $('#hero-header-wrapper img').attr('src', place.photos[0].getUrl({'maxWidth': 408, 'maxheight': 407}));
+            $('#hero-header-wrapper img').removeAttr('src');
+             if (place.photos){
+                 $('#hero-header-wrapper img').attr('src', place.photos[0].getUrl({'maxWidth': 408, 'maxheight': 407}));
+            }
             $('.place-name').text(place['name']);
             $('.place-review-score').text(place['rating']);
             $('.place-type').text(place['types'][0]);
