@@ -47,12 +47,6 @@
             position: absolute;
         }
     }
-
-
-    .search-bar-menu-icon:hover + .search-bar-menu-tooltip {
-        display: block;
-    }
-
     
     .input-text-bar {
         border: none;
@@ -97,5 +91,9 @@
                 border-bottom: 1px solid #E6E6E6;
             }
         }
+    }
+  
+    .search-bar-menu-icon:hover ~ .search-bar-menu:not(.visible) ~ .search-bar-menu-tooltip {
+        display: block;
     }
 }

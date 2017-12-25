@@ -45,9 +45,7 @@
   left: 19px;
   position: absolute;
 }
-.search-bar-wrapper .search-bar-menu-icon:hover + .search-bar-menu-tooltip {
-  display: block;
-}
+
 .search-bar-wrapper .input-text-bar {
   border: none;
   width: 210px;
@@ -70,6 +68,7 @@
 
 .search-bar-wrapper .search-bar-menu {
   background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
   display: none;
   position: absolute;
   top: 50px;
@@ -87,3 +86,6 @@
 .search-bar-wrapper .search-bar-menu .search-bar-menu-row:not(:last-child) {
   border-bottom: 1px solid #E6E6E6;
 }
+.search-bar-wrapper .search-bar-menu-icon:hover ~ .search-bar-menu:not(.visible) ~ .search-bar-menu-tooltip {
+   display: block;
+ }

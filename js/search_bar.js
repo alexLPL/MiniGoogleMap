@@ -2,8 +2,7 @@ class SearchBar {
     constructor(callback) {
         this.template = `
                         <div class="search-bar-wrapper">
-                            <i class="search-bar-menu-icon material-icons" style="font-size:24px">menu</i>
-                            <div class="search-bar-menu-tooltip">Menu</div>
+                            <i class="search-bar-menu-icon material-icons" style="font-size:24px">menu</i>    
                             <input type="text" placeholder="Search mini map" class="input-text-bar" />
                             <div class="search-icon"></div>
                             <div class="search-bar-menu">
@@ -12,6 +11,7 @@ class SearchBar {
                                 <div class="search-bar-menu-row">Transit</div>
                                 <div class="search-bar-menu-row">Bicycling</div>
                             </div>
+                            <div class="search-bar-menu-tooltip">Menu</div>
                         </div>
                         `
         this.callback=callback;
