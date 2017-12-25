@@ -74,4 +74,28 @@
         display: inline-block;
         vertical-align: middle;
     }
+  
+       .search-bar-menu {
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 200px;
+
+        &.visible {
+            display: block;
+        }
+
+        .search-bar-menu-row {
+            font-family: Roboto, Arial, sans-serif;
+            height: 50px;
+            padding: 0 20px;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid #E6E6E6;
+            }
+        }
+    }
 }

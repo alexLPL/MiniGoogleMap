@@ -67,3 +67,23 @@
   display: inline-block;
   vertical-align: middle;
 }
+
+.search-bar-wrapper .search-bar-menu {
+  background-color: white;
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 200px;
+}
+.search-bar-wrapper .search-bar-menu.visible {
+  display: block;
+}
+.search-bar-wrapper .search-bar-menu .search-bar-menu-row {
+  font-family: Roboto, Arial, sans-serif;
+  height: 50px;
+  padding: 0 20px;
+}
+.search-bar-wrapper .search-bar-menu .search-bar-menu-row:not(:last-child) {
+  border-bottom: 1px solid #E6E6E6;
+}
