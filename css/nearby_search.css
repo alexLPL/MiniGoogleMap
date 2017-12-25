@@ -125,6 +125,12 @@ html body #place-info-wrapper .place-info-action-bar-wrapper .place-info-action-
   flex-direction: column;
   justify-content: center;
   padding: 4px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+html body #place-info-wrapper .place-info-action-bar-wrapper .place-info-action-bar .place-info-button:hover {
+   cursor: pointer;
+   opacity: 0.8;
 }
 html body #place-info-wrapper .place-info-action-bar-wrapper .place-info-action-bar .place-info-button .place-info-action-icon {
   margin-bottom: 6px;
