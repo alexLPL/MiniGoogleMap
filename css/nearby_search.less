@@ -78,21 +78,13 @@ html{
                         }
 
                         .place-review-stars-wrapper {
-                            display: inline-flex;
-                            justify-content: center;
+                            align-items: center;
+                            display: flex;
                             padding-left: 6px;
 
-                            .star-icon {
-                                background-image: url('/assets/star-16.png');
-                                height: 16px;
-                                width: 16px;
-                            }
-
-                            .half-star-icon {
-                                background-image: url('/assets/half-star-16.png');
-                                height: 16px;
-                                width: 16px;
-                            }
+                            i {
+				color: white;
+		         	}
                         }
                     }
 
@@ -145,7 +137,7 @@ html{
 
                     .place-info-details-row {
                         display: flex;
-                        padding: 4px 0;
+                        padding: 6px 0;
 
                         .place-info-details-icon {
                             color: #4285F4;
