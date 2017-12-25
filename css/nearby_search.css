@@ -25,6 +25,27 @@ html body #place-info-wrapper.is-active {
 html body #place-info-wrapper.visible {
   transform: translateX(0);
 }
+
+html body #place-info-wrapper .loading-view-wrapper {
+  align-items: center;
+  display: none;
+  height: 305px;
+  justify-content: center;
+  width: 408px;
+}
+html body #place-info-wrapper .loading-view-wrapper.visible {
+  display: flex;
+}
+html body #place-info-wrapper .loading-view-wrapper img {
+  height: 50px;
+  width: 50px;
+}
+html body #place-info-wrapper .place-info-content-wrapper {
+  display: none;
+}
+html body #place-info-wrapper .place-info-content-wrapper.visible {
+  display: block;
+}
 html body #place-info-wrapper #hero-header-wrapper {
   width: 100%;
   height: 200px;

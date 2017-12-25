@@ -113,7 +113,9 @@ $(function(){
                     '</div>'
                 );
             }, this);
-            
+		
+            $('.loading-view-wrapper').removeClass('visible');
+            $('.place-info-content-wrapper').addClass('visible');            
         });
     };
 
@@ -156,6 +158,9 @@ $(function(){
                         map.setOptions({'mapTypeControl': false});
                         $('.place-review-stars-wrapper').empty();
                         $('.place-info-details').empty();
+
+                        $('.loading-view-wrapper').addClass('visible');
+                        $('.place-info-content-wrapper').removeClass('visible');
                     });
 
                    markers_shown.push(marker);   

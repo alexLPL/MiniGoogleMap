@@ -27,7 +27,32 @@ html{
           &.visible {
               transform: translateX(0);
             }
-            
+          
+            .loading-view-wrapper {
+                align-items: center;
+                display: none;
+                height: 305px;
+                justify-content: center;
+                width: 408px;
+
+                &.visible {
+                    display: flex;
+                }
+
+                img {
+                    height: 50px;
+                    width: 50px;
+                }
+            }
+
+            .place-info-content-wrapper {
+                display: none;
+
+                &.visible {
+                    display: block;
+                }
+            } 
+  
             #hero-header-wrapper {
                 width: 100%;
                 height: 200px;
