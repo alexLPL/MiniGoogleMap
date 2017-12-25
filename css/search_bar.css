@@ -79,6 +79,7 @@
   display: block;
 }
 .search-bar-wrapper .search-bar-menu .search-bar-menu-row {
+  cursor: pointer;
   font-family: Roboto, Arial, sans-serif;
   height: 50px;
   padding: 0 20px;

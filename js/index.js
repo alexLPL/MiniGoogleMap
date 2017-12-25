@@ -15,11 +15,16 @@ $(function(){
         verified_user: 'Claim the business'
     } 
 
+  var position = {
+         lat: 47.6,
+         lng: -122.3
+   };
+
  var current_infowindow;
  var markers_shown;
 
  function initMap() {
-        var position = {lat: 47.6, lng: -122.3};
+       
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: DEFAULT_ZOOM,
           center: position,
@@ -31,41 +36,22 @@ $(function(){
           position: position,
           map: map
         });
-//	 $.ajax({
-//             url: '/places-info',
-//             data: {
-//                'location': position.lat + ',' + position.lng,
-//                 'type': 'restaurant',
-//                 'key': GOOGLE_API_KEY,
-//                 'radius': 500
-//             },
-//             success: function(data) {
-//                 debugger;
-//             },
-//             fail: function(data) {
-//                 debugger;
-//             }
-//         });
 
-
-        var params = {
-             'location': new google.maps.LatLng(position.lat, position.lng),
-             'radius': 500,
-             'type': 'restaurant'
-        };
-
-        getNearByPlaces(map,params);
+        map.addListener('idle', function(ev) {
+            position.lat = this.getCenter().lat();
+            position.lng = this.getCenter().lng();
+        });
 
         $('.place-info-visibility-toggle').on('click', function() {
             $('#place-info-wrapper').toggleClass('invisible');
             $('#place-info-wrapper .triangle-icon').toggleClass('left');
         });
 
-        var search_bar = new SearchBar(function(type) {
+        var search_bar = new SearchBar(function(keyword) {
             var params = {
                  'location': new google.maps.LatLng(position.lat, position.lng),
                  'radius': 500,
-                 'type': type
+                 'keyword': keyword
             };
             getNearByPlaces(map, params);
         });

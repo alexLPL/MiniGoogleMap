@@ -6,10 +6,10 @@ class SearchBar {
                             <input type="text" placeholder="Search mini map" class="input-text-bar" />
                             <div class="search-icon"></div>
                             <div class="search-bar-menu">
-                                <div class="search-bar-menu-row">Satellite</div>
-                                <div class="search-bar-menu-row">Traffic</div>
-                                <div class="search-bar-menu-row">Transit</div>
-                                <div class="search-bar-menu-row">Bicycling</div>
+                                <div class="search-bar-menu-row">restaurant</div>
+                                <div class="search-bar-menu-row">park</div>
+                                <div class="search-bar-menu-row">coffee</div>
+                                <div class="search-bar-menu-row">donut</div>
                             </div>
                             <div class="search-bar-menu-tooltip">Menu</div>
                         </div>
@@ -27,5 +27,10 @@ class SearchBar {
         $('.search-bar-menu-icon').on('click', function(ev) {
             $('.search-bar-menu').toggleClass('visible');
         });
+
+        $('.search-bar-menu-row').on('click', _.bind(function(ev) {
+            $('.input-text-bar')[0].value = ev.currentTarget.textContent;
+            this.callback(ev.currentTarget.textContent);
+        }, this));
     }
 }
