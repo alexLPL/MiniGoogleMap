@@ -117,6 +117,26 @@ html body #place-info-wrapper .place-info-action-bar-wrapper .place-info-action-
   text-transform: uppercase;
 }
 
+html body #place-info-wrapper .place-info-details-wrapper {
+  background: white;
+}
+html body #place-info-wrapper .place-info-details-wrapper .place-info-details {
+  padding: 24px;
+}
+html body #place-info-wrapper .place-info-details-wrapper .place-info-details .place-info-details-row {
+  display: flex;
+  padding: 4px 0;
+}
+html body #place-info-wrapper .place-info-details-wrapper .place-info-details .place-info-details-row .place-info-details-icon {
+  color: #4285F4;
+  margin-right: 24px;
+}
+html body #place-info-wrapper .place-info-details-wrapper .place-info-details .place-info-details-row .place-info-details-description {
+  color: rgba(0, 0, 0, 0.87);
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 13px;
+}
+
 html body #place-info-wrapper .place-info-visibility-toggle {
   width: 23px;
   height: 48px;

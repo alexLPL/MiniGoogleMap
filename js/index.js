@@ -2,6 +2,19 @@
 $(function(){
  var DEFAULT_ZOOM = 15;
  var GOOGLE_API_KEY = 'AIzaSyCl2EfOePJUj5HmEjhGMvfLgoF1EFDghM0'; 
+ 
+ var DETAIL_INFO_ROWS = {
+        adr_address: 'place',
+        website: 'public',
+        formatted_phone_number: 'call'
+    };
+
+ var DEFAULT_DETAIL_INFO_ROWS = {
+        flag: 'Add a label',
+        create: 'Suggest an edit',
+        verified_user: 'Claim the business'
+    } 
+
  var current_infowindow;
  var markers_shown;
 
@@ -79,6 +92,27 @@ $(function(){
             $('.place-type').text(place['types'][0]);
             $('#place-info-wrapper').addClass('visible');
             $('#place-info-wrapper').addClass('is-active');
+
+            _.each(DETAIL_INFO_ROWS, function(value, key) {
+                if (key in place) {
+                    $('.place-info-details').append(
+                        '<div class="place-info-details-row">' +
+                            '<i class="place-info-details-icon material-icons" style="font-size:24px">' + value + '</i>' +
+                            '<div class="place-info-details-description">' + place[key] + '</div>' +
+                        '</div>'
+                    );
+                }
+            }, this);
+
+            _.each(DEFAULT_DETAIL_INFO_ROWS, function(value, key) {
+                $('.place-info-details').append(
+                    '<div class="place-info-details-row">' +
+                        '<i class="place-info-details-icon material-icons" style="font-size:24px">' + key + '</i>' +
+                        '<div class="place-info-details-description">' + value + '</div>' +
+                    '</div>'
+                );
+            }, this);
+            
         });
     };
 
@@ -120,6 +154,7 @@ $(function(){
                         showDetailedInfo(place);
                         map.setOptions({'mapTypeControl': false});
                         $('.place-review-stars-wrapper').empty();
+                        $('.place-info-details').empty();
                     });
 
                    markers_shown.push(marker);   
