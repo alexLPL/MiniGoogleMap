@@ -22,7 +22,10 @@ $(function(){
         var position = {lat: 47.6, lng: -122.3};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: DEFAULT_ZOOM,
-          center: position
+          center: position,
+          mapTypeControlOptions: {
+                position: google.maps.ControlPosition.BOTTOM_RIGHT
+            }
         });
         var marker = new google.maps.Marker({
           position: position,
@@ -54,7 +57,7 @@ $(function(){
         getNearByPlaces(map,params);
 
         $('.place-info-visibility-toggle').on('click', function() {
-            $('#place-info-wrapper').toggleClass('visible');
+            $('#place-info-wrapper').toggleClass('invisible');
             $('#place-info-wrapper .triangle-icon').toggleClass('left');
         });
 
@@ -66,7 +69,7 @@ $(function(){
             };
             getNearByPlaces(map, params);
         });
-        search_bar.addTo($('body'));
+        search_bar.addTo($('#place-info-wrapper'));
     };
 
     function showDetailedInfo(place) {
@@ -91,7 +94,7 @@ $(function(){
             }
 
             $('.place-type').text(place['types'][0]);
-            $('#place-info-wrapper').addClass('visible');
+           
             $('#place-info-wrapper').addClass('is-active');
 
             _.each(DETAIL_INFO_ROWS, function(value, key) {
@@ -155,7 +158,7 @@ $(function(){
                         current_infowindow = infowindow;
 
                         showDetailedInfo(place);
-                        map.setOptions({'mapTypeControl': false});
+                     
                         $('.place-review-stars-wrapper').empty();
                         $('.place-info-details').empty();
 

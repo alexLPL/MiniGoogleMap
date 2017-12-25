@@ -17,15 +17,21 @@ html{
             position: absolute;
             top: 0;
             transition: transform 0.3s ease-in-out;
-            transform: translateX(-408px);
-            display: none;
+            transform: translateX(0);
+            width: 408px;
           
-          &.is-active{
-            display: block;
-          }
+          &:not(.is-active) {
+                .place-info-content-wrapper {
+                    display: none;
+                }
+
+                .place-info-visibility-toggle {
+                    display: none;
+                }
+            }
     
-          &.visible {
-              transform: translateX(0);
+          &.invisible {
+              transform: translateX(-408px);
             }
           
             .loading-view-wrapper {

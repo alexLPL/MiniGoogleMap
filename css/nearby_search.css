@@ -16,14 +16,18 @@ html body #place-info-wrapper {
   position: absolute;
   top: 0;
   transition: transform 0.3s ease-in-out;
-  transform: translateX(-408px);
+  transform: translateX(0);
+  width: 408px;
+}
+
+html body #place-info-wrapper:not(.is-active) .place-info-content-wrapper {
   display: none;
 }
-html body #place-info-wrapper.is-active {
-  display: block;
+html body #place-info-wrapper:not(.is-active) .place-info-visibility-toggle {
+  display: none;
 }
-html body #place-info-wrapper.visible {
-  transform: translateX(0);
+html body #place-info-wrapper.invisible {
+  transform: translateX(-408px);
 }
 
 html body #place-info-wrapper .loading-view-wrapper {
@@ -163,7 +167,7 @@ html body #place-info-wrapper .place-info-visibility-toggle {
   background-color: rgba(255, 255, 255, 0.9);
   border: none;
   border-left: 1px solid #D4D4D4;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   top: 8px;
   outline: none;
 }
